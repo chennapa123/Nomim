@@ -1,0 +1,70 @@
+.dashboard { padding: 36px 24px 60px; max-width: 1280px; }
+.dash-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 32px; flex-wrap: wrap; gap: 16px; }
+.dash-header h1 { font-size: 1.8rem; }
+.dash-subtitle { color: var(--earth-500); font-size: 0.9rem; margin-top: 4px; }
+.dash-header-actions { display: flex; gap: 10px; }
+
+/* KPIs */
+.dash-kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-bottom: 28px; }
+.kpi-card {
+  padding: 24px; border-radius: var(--radius-md); border: 1px solid;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.kpi-green { background: var(--green-50); border-color: var(--green-200); }
+.kpi-blue { background: #eff6ff; border-color: #bfdbfe; }
+.kpi-amber { background: var(--amber-50); border-color: #fde68a; }
+.kpi-earth { background: var(--earth-100); border-color: var(--earth-200); }
+.kpi-icon { font-size: 1.4rem; }
+.kpi-value { font-size: 1.8rem; font-weight: 700; font-family: var(--font-display); color: var(--earth-900); }
+.kpi-label { font-size: 0.82rem; color: var(--earth-500); font-weight: 500; }
+
+/* Charts */
+.dash-charts-row { display: grid; grid-template-columns: 1fr 1.5fr; gap: 18px; margin-bottom: 36px; }
+.dash-chart-card { background: white; border-radius: var(--radius-md); border: 1px solid var(--earth-200); padding: 24px; }
+.dash-chart-card h3 { font-size: 1rem; font-family: var(--font-body); font-weight: 700; margin-bottom: 16px; }
+.chart-with-legend { display: flex; align-items: center; gap: 16px; }
+.chart-legend { display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.legend-item { display: flex; align-items: center; gap: 8px; }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.legend-name { font-size: 0.8rem; flex: 1; color: var(--earth-700); }
+.legend-value { font-size: 0.82rem; font-weight: 700; color: var(--earth-900); }
+
+/* Sections */
+.dash-section { margin-bottom: 40px; }
+.dash-section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.dash-section-header h2 { font-size: 1.3rem; }
+
+/* Orders table */
+.orders-table { background: white; border-radius: var(--radius-md); border: 1px solid var(--earth-200); overflow: hidden; }
+.ot-header {
+  display: grid; grid-template-columns: 1.2fr 1fr 1.5fr 1fr 1.2fr 0.5fr;
+  padding: 12px 20px; background: var(--earth-50);
+  font-size: 0.75rem; font-weight: 700; color: var(--earth-500);
+  text-transform: uppercase; letter-spacing: 0.05em;
+}
+.ot-row {
+  display: grid; grid-template-columns: 1.2fr 1fr 1.5fr 1fr 1.2fr 0.5fr;
+  padding: 14px 20px; border-top: 1px solid var(--earth-100);
+  align-items: center; transition: background 0.15s;
+}
+.ot-row:hover { background: var(--earth-50); }
+.ot-num { font-weight: 700; font-size: 0.88rem; color: var(--green-700); }
+.ot-date { font-size: 0.82rem; color: var(--earth-500); }
+.ot-party { font-size: 0.88rem; font-weight: 500; }
+.ot-amount { font-size: 0.9rem; font-weight: 700; color: var(--earth-800); }
+
+/* My products */
+.my-products-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+.my-product-card { background: white; border-radius: var(--radius-md); border: 1px solid var(--earth-200); overflow: hidden; transition: var(--transition); }
+.my-product-card:hover { box-shadow: var(--shadow-md); }
+.mpc-img-wrap { height: 100px; overflow: hidden; background: var(--earth-100); }
+.mpc-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.mpc-body { padding: 10px; display: flex; flex-direction: column; gap: 4px; }
+.mpc-name { font-size: 0.82rem; font-weight: 700; color: var(--earth-900); }
+.mpc-price { font-size: 0.9rem; font-weight: 700; color: var(--green-700); }
+.mpc-stock { font-size: 0.72rem; color: var(--earth-500); }
+.mpc-actions { margin-top: 6px; }
+
+@media (max-width: 1200px) { .my-products-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 1024px) { .dash-kpis { grid-template-columns: repeat(2, 1fr); } .dash-charts-row { grid-template-columns: 1fr; } }
+@media (max-width: 768px) { .ot-header, .ot-row { grid-template-columns: 1fr 1fr 1fr 1fr; } .ot-header span:nth-child(3), .ot-row span:nth-child(3) { display: none; } }

@@ -1,0 +1,14 @@
+{
+  "name": "agrimart",
+  "version": "1.0.0",
+  "description": "AgriMart - Farmer to Vendor Direct Marketplace (MERN Stack)",
+  "scripts": {
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\"",
+    "start": "cd backend && npm start",
+    "build": "cd frontend && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

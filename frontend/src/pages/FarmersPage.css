@@ -1,0 +1,25 @@
+.farmers-page { padding-bottom: 60px; }
+.fp-header { background: linear-gradient(135deg, var(--green-900), var(--green-700)); padding: 48px 0 40px; color: white; margin-bottom: 36px; }
+.fp-header h1 { font-size: 2.2rem; margin-bottom: 8px; }
+.fp-header p { color: rgba(255,255,255,0.75); }
+.fp-body { max-width: 1280px; }
+.fp-filters { display: flex; gap: 12px; margin-bottom: 28px; }
+.fp-filter-select { max-width: 220px; }
+.fp-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.fp-card { background: white; border-radius: var(--radius-md); border: 1px solid var(--earth-200); padding: 20px; text-decoration: none; color: inherit; transition: var(--transition); display: flex; flex-direction: column; gap: 10px; }
+.fp-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); border-color: var(--green-300); }
+.fp-card-header { display: flex; align-items: center; justify-content: space-between; }
+.fp-avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--green-600); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 700; }
+.fp-name { font-size: 1rem; font-weight: 700; font-family: var(--font-display); color: var(--earth-900); }
+.fp-loc { font-size: 0.8rem; color: var(--earth-500); }
+.fp-bio { font-size: 0.8rem; color: var(--earth-600); line-height: 1.5; }
+.fp-crops { display: flex; flex-wrap: wrap; gap: 4px; }
+.fp-crop { font-size: 0.7rem !important; }
+.fp-more { font-size: 0.72rem; color: var(--earth-400); }
+.fp-footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 10px; border-top: 1px solid var(--earth-100); }
+.fp-rating { display: flex; align-items: center; gap: 4px; font-size: 0.85rem; font-weight: 600; color: var(--amber-600); }
+.fp-rating-count { font-size: 0.75rem; color: var(--earth-400); font-weight: 400; }
+.fp-joined { font-size: 0.75rem; color: var(--earth-400); }
+@media (max-width: 1024px) { .fp-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 768px) { .fp-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .fp-grid { grid-template-columns: 1fr; } }

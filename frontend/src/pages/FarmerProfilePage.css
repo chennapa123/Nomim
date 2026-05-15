@@ -1,0 +1,34 @@
+.fpp { padding-bottom: 60px; }
+.fpp-hero { background: linear-gradient(135deg, var(--green-900), var(--green-700)); padding: 48px 0; color: white; margin-bottom: 36px; }
+.fpp-hero-inner { display: flex; align-items: center; gap: 24px; max-width: 1280px; }
+.fpp-avatar { width: 90px; height: 90px; border-radius: 50%; background: rgba(255,255,255,0.15); color: white; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; font-weight: 700; flex-shrink: 0; border: 3px solid rgba(255,255,255,0.3); }
+.fpp-hero-info h1 { font-size: 2rem; margin-bottom: 6px; }
+.fpp-hero-info p { color: rgba(255,255,255,0.75); margin-bottom: 14px; }
+.fpp-badges { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.fpp-body { max-width: 1280px; }
+.fpp-grid { display: grid; grid-template-columns: 280px 1fr; gap: 28px; }
+.fpp-sidebar { display: flex; flex-direction: column; gap: 16px; }
+.fpp-card { background: white; border-radius: var(--radius-md); border: 1px solid var(--earth-200); padding: 20px; }
+.fpp-card h3 { font-family: var(--font-body); font-size: 0.9rem; font-weight: 700; color: var(--earth-600); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+.fpp-card p { font-size: 0.88rem; color: var(--earth-600); line-height: 1.6; }
+.fpp-details { display: flex; flex-direction: column; gap: 8px; }
+.fpp-detail { display: flex; justify-content: space-between; font-size: 0.84rem; }
+.fpp-detail span { color: var(--earth-500); }
+.fpp-detail strong { color: var(--earth-800); }
+.fpp-crops { display: flex; flex-wrap: wrap; gap: 6px; }
+.fpp-crop { font-size: 0.75rem !important; }
+.fpp-stat-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.fpp-stat { background: white; border-radius: var(--radius-sm); border: 1px solid var(--earth-200); padding: 16px; text-align: center; }
+.fpp-stat strong { display: block; font-size: 1.6rem; color: var(--green-700); font-family: var(--font-display); }
+.fpp-stat span { font-size: 0.75rem; color: var(--earth-500); }
+
+.fpp-main h2 { font-size: 1.3rem; margin-bottom: 18px; }
+.fpp-products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 40px; }
+.fpp-reviews { margin-top: 40px; }
+.fpp-reviews h2 { font-size: 1.3rem; margin-bottom: 18px; }
+.fpp-reviews-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+@media (max-width: 1024px) { .fpp-products-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) { .fpp-grid { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .fpp-reviews-grid, .fpp-products-grid { grid-template-columns: 1fr; } .fpp-hero-inner { flex-direction: column; } }

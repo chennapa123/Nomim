@@ -1,0 +1,17 @@
+.pfp { padding: 36px 24px 60px; max-width: 900px; }
+.pfp h1 { font-size: 2rem; margin-bottom: 4px; }
+.pfp-subtitle { color: var(--earth-500); margin-bottom: 32px; }
+.pfp-form { display: flex; flex-direction: column; gap: 20px; }
+.pfp-section { background: white; border-radius: var(--radius-md); border: 1px solid var(--earth-200); padding: 24px; }
+.pfp-section h3 { font-size: 1rem; font-family: var(--font-body); font-weight: 700; margin-bottom: 18px; color: var(--earth-700); padding-bottom: 10px; border-bottom: 1px solid var(--earth-100); }
+.pfp-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.pfp-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+.pfp-full { grid-column: 1 / -1; }
+.pfp-textarea { resize: vertical; min-height: 100px; }
+.pfp-checkboxes { display: flex; flex-direction: column; gap: 10px; }
+.pfp-check { display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 0.9rem; color: var(--earth-700); }
+.pfp-check input { accent-color: var(--green-600); width: 16px; height: 16px; }
+.pfp-actions { display: flex; justify-content: flex-end; gap: 12px; padding: 20px 24px; background: white; border-radius: var(--radius-md); border: 1px solid var(--earth-200); }
+@media (max-width: 640px) {
+  .pfp-grid-2, .pfp-grid-3 { grid-template-columns: 1fr; }
+}
