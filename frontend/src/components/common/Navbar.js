@@ -29,7 +29,7 @@ const Navbar = () => {
         {/* Logo */}
         <Link to="/" className="navbar-logo">
           <span className="logo-icon">🌾</span>
-          <span className="logo-text">Agri<span>Mart</span></span>
+          <span className="logo-text">Nomim</span>
         </Link>
 
         {/* Desktop Nav */}

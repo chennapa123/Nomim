@@ -6,7 +6,7 @@ const Footer = () => (
   <footer className="footer">
     <div className="container footer-grid">
       <div className="footer-brand">
-        <div className="footer-logo">🌾 AgriMart</div>
+        <div className="footer-logo">🌾 Nomim</div>
         <p>Connecting farmers directly with vendors — no middlemen, fair prices, fresh produce.</p>
         <div className="footer-socials">
           <a href="#!" aria-label="Facebook">📘</a>
@@ -19,7 +19,7 @@ const Footer = () => (
         <h4>Platform</h4>
         <Link to="/products">Browse Products</Link>
         <Link to="/farmers">Find Farmers</Link>
-        <Link to="/register">Sell on AgriMart</Link>
+        <Link to="/register">Sell on Nomim</Link>
       </div>
       <div className="footer-col">
         <h4>Support</h4>
@@ -34,7 +34,7 @@ const Footer = () => (
       </div>
     </div>
     <div className="footer-bottom">
-      <p>© {new Date().getFullYear()} AgriMart. Built for Indian Farmers & Vendors.</p>
+      <p>© {new Date().getFullYear()} Nomim. Built for Indian Farmers & Vendors.</p>
     </div>
   </footer>
 );

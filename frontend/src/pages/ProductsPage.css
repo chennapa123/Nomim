@@ -10,7 +10,7 @@
 .pp-search-input::placeholder { color: rgba(255,255,255,0.6); }
 .pp-search-input:focus { background: white; color: var(--earth-900); }
 
-.pp-body { display: grid; grid-template-columns: 260px 1fr; gap: 32px; align-items: start; }
+.pp-body { display: grid; grid-template-columns: 400px 1fr; gap: 32px; align-items: start; }
 
 .pp-sidebar {
   background: white; border-radius: var(--radius-md);
@@ -24,9 +24,36 @@
 .pp-filter-label { display: block; font-size: 0.8rem; font-weight: 700; color: var(--earth-600); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
 .pp-radio-item { display: flex; align-items: center; gap: 8px; padding: 5px 0; font-size: 0.86rem; color: var(--earth-700); cursor: pointer; }
 .pp-radio-item input { accent-color: var(--green-600); }
-.pp-price-range { display: flex; align-items: center; gap: 8px; }
-.pp-price-range input { flex: 1; }
-.pp-price-range span { color: var(--earth-400); }
+.pp-price-range { 
+  display: flex; 
+  align-items: center; 
+  gap: 8px;
+  background: #f9f9f9;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--earth-200);
+}
+.pp-price-range input { 
+  flex: 1; 
+  padding: 8px 10px;
+  height: 40px;
+  border: 1px solid var(--earth-300);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  box-sizing: border-box;
+  min-width: 0;
+}
+.pp-price-range input:focus {
+  border-color: var(--green-500);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+.pp-price-range span { 
+  color: var(--earth-400);
+  font-weight: 600;
+  min-width: 12px;
+  text-align: center;
+}
 
 .pp-toolbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
 .pp-count { font-size: 0.88rem; color: var(--earth-500); }
