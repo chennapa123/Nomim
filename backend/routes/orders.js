@@ -98,9 +98,20 @@ router.put('/:id/status', protect, async (req, res) => {
       return res.status(403).json({ success: false, message: 'Vendors cannot set this status' });
     }
 
+    // Validate: Payment must be completed before marking as delivered (except COD which will auto-complete)
+    if (status === 'delivered' && order.paymentStatus === 'pending' && order.paymentMethod !== 'cod') {
+      return res.status(400).json({ success: false, message: 'Cannot mark as delivered. Payment must be completed first.' });
+    }
+
     order.status = status;
     order.statusHistory.push({ status, note: note || `Status updated to ${status}` });
-    if (status === 'delivered') order.actualDeliveryDate = new Date();
+    if (status === 'delivered') {
+      order.actualDeliveryDate = new Date();
+      // Automatically mark COD payment as paid when delivered
+      if (order.paymentMethod === 'cod') {
+        order.paymentStatus = 'paid';
+      }
+    }
     await order.save();
 
     // Notify the other party
@@ -110,6 +121,41 @@ router.put('/:id/status', protect, async (req, res) => {
       title: `Order ${order.orderNumber} Updated`,
       message: `Order status changed to: ${status}`,
       type: 'order',
+      link: `/orders/${order._id}`
+    });
+
+    res.json({ success: true, order });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
+// @PUT /api/orders/:id/payment-status - Update payment status
+router.put('/:id/payment-status', protect, async (req, res) => {
+  try {
+    const { paymentStatus, transactionId } = req.body;
+    const order = await Order.findById(req.params.id);
+    if (!order) return res.status(404).json({ success: false, message: 'Order not found' });
+
+    // Only vendor (seller) can mark payment as received
+    if (order.vendor._id.toString() !== req.user._id.toString()) {
+      return res.status(403).json({ success: false, message: 'Only the seller can update payment status' });
+    }
+
+    // Only allow paid or failed status
+    if (!['paid', 'failed', 'refunded'].includes(paymentStatus)) {
+      return res.status(400).json({ success: false, message: 'Invalid payment status' });
+    }
+
+    order.paymentStatus = paymentStatus;
+    await order.save();
+
+    // Notify farmer
+    await Notification.create({
+      user: order.farmer,
+      title: `Payment ${paymentStatus}`,
+      message: `Payment for order ${order.orderNumber} has been marked as ${paymentStatus}`,
+      type: 'payment',
       link: `/orders/${order._id}`
     });
 
