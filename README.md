@@ -1,10 +1,10 @@
-# 🌾 AgriMart — Farm to Vendor Direct Marketplace
+# 🌾 Nomim — Farm to Vendor Direct Marketplace
 
 A MERN-based platform connecting farmers directly with consumers/retailers, eliminating middlemen and ensuring fair prices for both parties.
 
 ## 🎯 Project Overview
 
-Nomim Farm Direct is a full-stack e-commerce platform that enables:
+Nomim is a full-stack e-commerce platform that enables:
 - **Farmers** to list their products directly
 - **Buyers/Consumers** to purchase fresh produce directly from farmers
 - **No middleman involvement** - direct farmer-to-consumer transactions
@@ -121,7 +121,7 @@ agrimart/
 
 ```bash
 git clone <your-repo-url>
-cd agrimart
+cd nomim
 npm run install-all
 ```
 
