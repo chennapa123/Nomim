@@ -1,14 +1,36 @@
 {
-  "name": "agrimart",
+  "name": "nomim-farm-direct",
   "version": "1.0.0",
-  "description": "AgriMart - Farmer to Vendor Direct Marketplace (MERN Stack)",
+  "description": "MERN-based platform connecting farmers directly with consumers",
+  "main": "server.js",
   "scripts": {
-    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
-    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\"",
-    "start": "cd backend && npm start",
-    "build": "cd frontend && npm run build"
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "client": "cd client && npm start",
+    "server": "nodemon server.js",
+    "dev:all": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "keywords": [
+    "mern",
+    "farm",
+    "direct",
+    "ecommerce"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^1.40.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.5.0",
+    "multer": "^1.4.5-lts.1"
   },
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.1",
+    "nodemon": "^3.0.1"
   }
 }
